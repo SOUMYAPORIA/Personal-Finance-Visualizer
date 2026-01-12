@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Finance Visualizer</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf"></script>
+  
+</head>
+<body>
+ <button id="darkToggle" class="dark-btn">🌙</button>
+
+
+  <div class="container">
+    
+    <h1>Personal Finance Visualizer</h1>
+    
+    <!-- Form Section -->
+    <div class="form-card">
+      <h3>Add Transaction</h3>
+      <input type="text" id="title" placeholder="Title (e.g., Salary, Groceries)">
+      <select id="filterCategory">
+  <option value="all">All</option>
+  <option value="food">Food</option>
+  <option value="travel">Travel</option>
+  <option value="bills">Bills</option>
+</select>
+      <input type="number" id="amount" placeholder="Amount">
+      <select id="type">
+        <option value="income">Income</option>
+        <option value="expense">Expense</option>
+      </select>
+      <button id="addBtn">Add</button>
+      
+    </div>
+
+    <!-- List -->
+    <div class="list-card">
+      <h3>Transactions</h3>
+      <ul id="transactionList"></ul>
+    </div>
+
+    <!-- Charts -->
+    <div class="charts">
+      <div class="chart-box">
+        <h3>Income vs Expense</h3>
+        <canvas id="pieChart"></canvas>
+        <canvas id="expenseChart"></canvas>
+
+      </div>
+
+      <div class="chart-box">
+        <h3>Monthly Overview</h3>
+        <canvas id="barChart"></canvas>
+      </div>
+    </div>
+<script src="script.js"></script>
+
+  </div>
+
+  
+</body>
+</html>

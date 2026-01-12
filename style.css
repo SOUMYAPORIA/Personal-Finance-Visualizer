@@ -1,0 +1,137 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Poppins, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f4f6fa;
+  padding: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-card, .list-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Inputs, selects and buttons except dark mode toggle */
+input, select, button:not(.dark-btn) {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Normal buttons */
+button:not(.dark-btn) {
+  background: #4c7df0;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  border: none;
+}
+
+button:not(.dark-btn):hover {
+  background: #345dd6;
+}
+
+/* Dark Mode toggle button */
+.dark-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: #222;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 18px;
+  z-index: 10000;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-btn:hover {
+  background: #444;
+}
+
+.list-card ul {
+  list-style: none;
+}
+
+.list-card li {
+  background: #fdfdfd;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.charts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.chart-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@media(max-width: 700px) {
+  .charts {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* DARK MODE STYLES */
+
+.dark {
+  background-color: #111;
+  color: white;
+}
+
+.dark .form-card,
+.dark .list-card,
+.dark .chart-box,
+.dark .list-card li {
+  background-color: #1a1a1a;
+  color: white;
+}
+
+.dark input,
+.dark select,
+.dark button:not(.dark-btn) {
+  background-color: #222 !important;
+  color: #eee !important;
+  border: 1px solid #555 !important;
+}
+
+.dark input::placeholder,
+.dark select::placeholder {
+  color: #aaa !important;
+}
